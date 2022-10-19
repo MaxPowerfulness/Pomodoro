@@ -1,0 +1,33 @@
+/* Header */
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+ul {
+    display: flex;
+    list-style: none;
+    padding: 0px;
+    gap: 20px;
+}
+
+/* Main */
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+p {
+    margin: 5px;
+}
+.placeholder {
+    border: 3px black solid;
+}
+
+button {
+    margin: 0px 5px;
+}
