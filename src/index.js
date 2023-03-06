@@ -12,7 +12,7 @@ const stopBtn = document.getElementById("stop");
 const study = document.querySelector(".study");
 const shortBreak = document.querySelector(".shortBreak");
 const longBreak = document.querySelector(".longBreak");
-const buttons = document.querySelectorAll("button");
+const buttons = document.querySelectorAll(".timerBtn");
 const body = document.querySelector("body");
 
 // Timer function
