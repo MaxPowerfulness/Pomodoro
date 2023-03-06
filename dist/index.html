@@ -1,31 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pomodoro</title>
-    <link href="../src/style.css" rel="stylesheet">
+    <link href="../src/style.css" rel="stylesheet" />
     <script src="index.bundle.js" defer></script>
-</head>
-<body>
+  </head>
+  <body class="studyTheme">
     <nav>
-        <p>Logo</p>
-        <ul>
-            <li>Calendar</li>
-            <li>Analytics</li>
-            <li>Login</li>
-            <li>Signup</li>
-        </ul>
+      <p>Pomodoro Timer</p>
+      <ul>
+        <li>Calendar</li>
+        <li>Analytics</li>
+        <li>Login</li>
+        <li>Signup</li>
+      </ul>
     </nav>
     <main>
-        <div id="timerContainer">
-            <span class="minutes">00</span><span>:</span><span class="seconds">10</span>
+      <div id="timer">
+        <div class="timerContainer">
+          <span class="minutes">25</span><span>:</span
+          ><span class="seconds">00</span>
         </div>
-        <div class="button-holder">
-            <button id="start">Start</button>
-            <button id="stop">Stop</button>
+        <div class="timerButtons">
+          <button id="start" class="studyTheme">Start</button>
+          <button id="stop" class="studyTheme">Stop</button>
         </div>
+      </div>
+      <div id="studyButtons">
+        <button class="study studyTheme">Study</button>
+        <button class="shortBreak shortBreakTheme">Short Break</button>
+        <button class="longBreak longBreakTheme">Long Break</button>
+      </div>
     </main>
-</body>
+    <p class="quotes"></p>
+  </body>
 </html>
