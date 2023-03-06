@@ -12,8 +12,10 @@ const stopBtn = document.getElementById("stop");
 const study = document.querySelector(".study");
 const shortBreak = document.querySelector(".shortBreak");
 const longBreak = document.querySelector(".longBreak");
+const buttons = document.querySelectorAll("button");
+const body = document.querySelector("body");
 
-// Event Listener
+// Timer function
 startBtn.addEventListener("click", () => {
   console.log("clicked");
   startBtn.disabled = true;
@@ -26,11 +28,31 @@ stopBtn.addEventListener("click", () => {
   clearInterval(start);
 });
 
-study.addEventListener("click", () => setStudyTime());
+// Study times
+study.addEventListener("click", () => {
+  setStudyTime();
+  themeChanger("studyTheme");
+});
 
-shortBreak.addEventListener("click", () => setShortBreak());
+shortBreak.addEventListener("click", () => {
+  setShortBreak();
+  themeChanger("shortBreakTheme");
+});
 
-longBreak.addEventListener("click", () => setLongBreak());
+longBreak.addEventListener("click", () => {
+  setLongBreak();
+  themeChanger("longBreakTheme");
+});
 
 //Functions
 setInterval(changeQuote, 5000);
+
+// Changes the theme of the website depending on timer setting
+function themeChanger(theme) {
+  buttons.forEach((button) => {
+    button.classList.remove("studyTheme", "shortBreakTheme", "longBreakTheme");
+    button.classList.add(theme);
+  });
+  body.classList.remove("studyTheme", "shortBreakTheme", "longBreakTheme");
+  body.classList.add(theme);
+}
