@@ -7,7 +7,7 @@
   --small-spacing: 20px;
   --large-spacing: 50px;
   --border-radius: 10px;
-  --small-padding: 20px 30px;
+  --small-padding: 20px 35px;
   --red: rgb(240, 94, 94);
   --green: rgb(97, 196, 93);
   --blue: rgb(109, 136, 255);
@@ -18,10 +18,16 @@
   src: url("../atwriter.ttf");
 }
 
+@font-face {
+  font-family: "Mont";
+  src: url("../Montserrat-Regular.ttf");
+}
+
 * {
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
+  font-family: "Mont", sans-serif;
 }
 
 body {
@@ -52,6 +58,7 @@ nav {
   display: flex;
   justify-content: space-between;
   padding: var(--small-spacing);
+  border-bottom: 3px black solid;
 }
 
 ul {
