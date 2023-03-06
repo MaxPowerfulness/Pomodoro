@@ -1,33 +1,111 @@
+/* Initialize */
+:root {
+  --font-size-small: 15px;
+  --font-size-med: 30px;
+  --font-size-large: 60px;
+  --small-margin: 8px;
+  --small-spacing: 20px;
+  --large-spacing: 50px;
+  --border-radius: 10px;
+  --small-padding: 20px 30px;
+  --red: rgb(240, 94, 94);
+  --green: rgb(97, 196, 93);
+  --blue: rgb(109, 136, 255);
+}
+
+@font-face {
+  font-family: "typewriter";
+  src: url("../atwriter.ttf");
+}
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  text-align: center;
+}
+
+button {
+  padding: var(--small-padding);
+  border: black 3px solid;
+  border-radius: var(--border-radius);
+  margin: var(--small-margin);
+}
+
+/* Themes */
+.studyTheme {
+  background: var(--red);
+}
+.shortBreakTheme {
+  background: var(--green);
+}
+.longBreakTheme {
+  background: var(--blue);
+}
+
 /* Header */
 nav {
-    display: flex;
-    justify-content: space-between;
-    padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  padding: var(--small-spacing);
 }
 
 ul {
-    display: flex;
-    list-style: none;
-    padding: 0px;
-    gap: 20px;
+  display: flex;
+  list-style: none;
+  gap: var(--small-spacing);
 }
 
 /* Main */
 main {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 50%;
+  gap: var(--large-spacing);
 }
 
-p {
-    margin: 5px;
-}
-.placeholder {
-    border: 3px black solid;
+#timer {
+  font-size: var(--font-size-large);
+  border: rgb(219, 219, 219) 3px solid;
+  border-radius: var(--border-radius);
+  padding: var(--small-padding);
+  box-shadow: rgba(0, 0, 0, 0.5) 0px 5px 15px;
 }
 
-button {
-    margin: 0px 5px;
+.timerButtons {
+  margin-top: var(--small-spacing);
+}
+
+/* Quote */
+@-webkit-keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.quotes {
+  position: relative;
+  top: 120px;
+  -webkit-animation: fade;
+  animation: fade;
+  font-size: var(--font-size-med);
+  font-family: "typewriter", "Times New Roman", Times, serif;
 }
