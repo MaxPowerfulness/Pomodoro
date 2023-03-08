@@ -1,4 +1,4 @@
-import { startFunction, start } from "./timer.js";
+import { startFunction, stopSound, start } from "./timer.js";
 import {
   setStudyTime,
   setShortBreak,
@@ -23,24 +23,33 @@ startBtn.addEventListener("click", () => {
 });
 
 stopBtn.addEventListener("click", () => {
-  console.log("stopClick");
   startBtn.disabled = false;
+  stopSound();
   clearInterval(start);
 });
 
 // Study times
 study.addEventListener("click", () => {
   setStudyTime();
+  stopSound();
+  startBtn.disabled = false;
+  clearInterval(start);
   themeChanger("studyTheme");
 });
 
 shortBreak.addEventListener("click", () => {
   setShortBreak();
+  stopSound();
+  startBtn.disabled = false;
+  clearInterval(start);
   themeChanger("shortBreakTheme");
 });
 
 longBreak.addEventListener("click", () => {
   setLongBreak();
+  stopSound();
+  startBtn.disabled = false;
+  clearInterval(start);
   themeChanger("longBreakTheme");
 });
 
