@@ -1,5 +1,6 @@
 // Global
 let counter = 0;
+const startSesh = document.querySelector(".startSesh");
 
 // Functions
 function saveSession() {
@@ -8,10 +9,18 @@ function saveSession() {
     end: null,
     comment: null,
   };
-  let session = localStorage.setItem(
-    `Session ${counter}`,
-    JSON.stringify(value)
-  );
+  localStorage.setItem(`Session ${counter}`, JSON.stringify(value));
+  startSesh.disabled = true;
 }
 
-export { saveSession };
+function endSession() {
+  // ends study sesssion, writes end time to object, bring down form to add session comments
+  console.log("endSESH");
+  let session = JSON.parse(localStorage.getItem(`Session ${counter}`));
+  session["end"] = new Date();
+  localStorage.setItem(`Session ${counter}`, JSON.stringify(session));
+  counter++;
+  startSesh.disabled = false;
+}
+
+export { saveSession, endSession };
