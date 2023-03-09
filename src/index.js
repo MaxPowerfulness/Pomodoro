@@ -17,6 +17,7 @@ const buttons = document.querySelectorAll(".timerBtn");
 const body = document.querySelector("body");
 const startSesh = document.querySelector(".startSesh");
 const endSesh = document.querySelector(".endSesh");
+endSesh.disabled = true;
 
 // Timer function
 startBtn.addEventListener("click", () => {
@@ -57,9 +58,17 @@ longBreak.addEventListener("click", () => {
 });
 
 // Session Buttons
-startSesh.addEventListener("click", () => saveSession());
+startSesh.addEventListener("click", () => {
+  saveSession();
+  endSesh.disabled = false;
+  startSesh.disabled = true;
+});
 
-endSesh.addEventListener("click", () => endSession());
+endSesh.addEventListener("click", () => {
+  endSession();
+  startSesh.disabled = false;
+  endSesh.disabled = true;
+});
 
 //Functions
 
