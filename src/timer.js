@@ -5,6 +5,8 @@ let start = null;
 const alarm = new Audio("../Ping1.mp3");
 
 //Functions
+
+// Counts down 1 from specified number
 function countdown() {
   console.log("minutes.textContent", minutes.textContent);
   console.log("seconds.textContent", seconds.textContent);
@@ -27,14 +29,17 @@ function countdown() {
   }
 }
 
+// Runs the countdown function every 1 second
 function startFunction() {
   start = setInterval(countdown, 1000);
 }
 
+// Plays the alarm sound
 function playSound() {
   alarm.play();
 }
 
+// Stops the alarm sound
 function stopSound() {
   alarm.pause();
   alarm.currentTime = 0;

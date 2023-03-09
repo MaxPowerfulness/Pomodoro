@@ -7,7 +7,8 @@
   --small-spacing: 20px;
   --large-spacing: 50px;
   --border-radius: 10px;
-  --small-padding: 20px 35px;
+  --small-padding: 10px 25px;
+  --large-padding: 20px 35px;
   --red: rgb(240, 94, 94);
   --green: rgb(97, 196, 93);
   --blue: rgb(109, 136, 255);
@@ -36,7 +37,7 @@ body {
 }
 
 button {
-  padding: var(--small-padding);
+  padding: var(--large-padding);
   border: black 3px solid;
   border-radius: var(--border-radius);
   margin: var(--small-margin);
@@ -59,12 +60,17 @@ nav {
   justify-content: space-between;
   padding: var(--small-spacing);
   border-bottom: 3px black solid;
+  align-items: center;
 }
 
 ul {
   display: flex;
   list-style: none;
   gap: var(--small-spacing);
+}
+
+.sessionBtn {
+  padding: var(--small-padding);
 }
 
 /* Main */
@@ -81,7 +87,7 @@ main {
   font-size: var(--font-size-large);
   border: rgb(219, 219, 219) 3px solid;
   border-radius: var(--border-radius);
-  padding: var(--small-padding);
+  padding: var(--large-padding);
   box-shadow: rgba(0, 0, 0, 0.5) 0px 5px 15px;
 }
 

@@ -1,7 +1,7 @@
 import { minutes, seconds } from "./timer.js";
 
 // Global Variables
-const quotes = document.getElementById("quotes");
+const quotes = document.querySelector(".quotes");
 let quoteList = [
   "There are no secrets to success. It is the result of preparation, hard work, and learning from failure.",
   "I am who I am today because of the choices I made yesterday.",
@@ -14,22 +14,26 @@ let quoteList = [
   "You are your greatest asset. Put your time, effort and money into training.",
 ];
 
+// Sets the study time to 25 minutes
 function setStudyTime() {
   minutes.textContent = "25";
   seconds.textContent = "00";
 }
 
+// Sets the break time to 5 minutes
 function setShortBreak() {
   minutes.textContent = "05";
   seconds.textContent = "00";
 }
 
+// Sets the break time to 20 minutes
 function setLongBreak() {
   minutes.textContent = "20";
   seconds.textContent = "00";
 }
 
+// Chooses a random quote from the list of quotes
 function changeQuote() {
   quotes.textContent = quoteList[Math.floor(Math.random() * quoteList.length)];
 }
-export { setStudyTime, setShortBreak, setLongBreak, changeQuote, quotes };
+export { setStudyTime, setShortBreak, setLongBreak, changeQuote };

@@ -5,6 +5,7 @@ import {
   setLongBreak,
   changeQuote,
 } from "./DOMchanges.js";
+import { saveSession, endSession } from "./sessionScript.js";
 
 //Global Variable
 const startBtn = document.getElementById("start");
@@ -14,6 +15,8 @@ const shortBreak = document.querySelector(".shortBreak");
 const longBreak = document.querySelector(".longBreak");
 const buttons = document.querySelectorAll(".timerBtn");
 const body = document.querySelector("body");
+const startSesh = document.querySelector(".startSesh");
+const endSesh = document.querySelector(".endSesh");
 
 // Timer function
 startBtn.addEventListener("click", () => {
@@ -53,7 +56,14 @@ longBreak.addEventListener("click", () => {
   themeChanger("longBreakTheme");
 });
 
+// Session Buttons
+startSesh.addEventListener("click", () => saveSession());
+
+endSesh.addEventListener("click", () => endSession());
+
 //Functions
+
+// Randomly cycles through quotes every 12.5 minutes
 setInterval(changeQuote, 5000);
 
 // Changes the theme of the website depending on timer setting
