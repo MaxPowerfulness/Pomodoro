@@ -1,5 +1,9 @@
 // Global
 let counter = 0;
+const form = document.getElementById("formPopUp");
+const overlay = document.querySelector('#overlayDiv');
+const formBtn = document.querySelector(".formBtn");
+const textArea = document.querySelector('textarea');
 
 // Functions
 function saveSession() {
@@ -16,7 +20,18 @@ function endSession() {
   let session = JSON.parse(localStorage.getItem(`Session ${counter}`));
   session["end"] = new Date();
   localStorage.setItem(`Session ${counter}`, JSON.stringify(session));
-  counter++;
+  form.style.display = "block";
+  overlay.classList.toggle('overlay');
 }
+
+// Form
+formBtn.addEventListener("click", () => {
+  form.display = "none";
+  overlay.classList.toggle('.overlay');
+  let session = JSON.parse(localStorage.getItem(`Session ${counter}`));
+  session["comment"] = textArea.value;
+  localStorage.setItem(`Session ${counter}`, JSON.stringify(session));
+  counter++;
+});
 
 export { saveSession, endSession };

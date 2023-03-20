@@ -70,8 +70,8 @@ endSesh.addEventListener("click", () => {
   endSesh.disabled = true;
 });
 
-//Functions
 
+//Functions
 // Randomly cycles through quotes every 12.5 minutes
 setInterval(changeQuote, 5000);
 
