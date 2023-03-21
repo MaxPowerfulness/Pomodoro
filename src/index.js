@@ -73,7 +73,7 @@ endSesh.addEventListener("click", () => {
 
 //Functions
 // Randomly cycles through quotes every 12.5 minutes
-setInterval(changeQuote, 5000);
+setInterval(changeQuote, 720000);
 
 // Changes the theme of the website depending on timer setting
 function themeChanger(theme) {
@@ -84,3 +84,5 @@ function themeChanger(theme) {
   body.classList.remove("studyTheme", "shortBreakTheme", "longBreakTheme");
   body.classList.add(theme);
 }
+
+changeQuote();

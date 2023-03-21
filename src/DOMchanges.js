@@ -1,7 +1,7 @@
 import { minutes, seconds } from "./timer.js";
 
 // Global Variables
-const quotes = document.querySelector(".quotes");
+const quotes = document.getElementById("quotes");
 let quoteList = [
   "There are no secrets to success. It is the result of preparation, hard work, and learning from failure.",
   "I am who I am today because of the choices I made yesterday.",
@@ -34,6 +34,12 @@ function setLongBreak() {
 
 // Chooses a random quote from the list of quotes
 function changeQuote() {
-  quotes.textContent = quoteList[Math.floor(Math.random() * quoteList.length)];
-}
-export { setStudyTime, setShortBreak, setLongBreak, changeQuote };
+  quotes.classList.add('text-fade');
+  setTimeout( () => {
+    quotes.textContent = quoteList[Math.floor(Math.random() * quoteList.length)];
+    quotes.classList.add('text-show');
+    quotes.classList.remove('text-fade')
+  }, 1000);
+};
+
+export { setStudyTime, setShortBreak, setLongBreak, changeQuote, };

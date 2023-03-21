@@ -96,31 +96,21 @@ main {
 }
 
 /* Quote */
-@-webkit-keyframes fade {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-@keyframes fade {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-.quotes {
+#quotes {
   position: relative;
   top: 120px;
-  -webkit-animation: fade;
-  animation: fade;
   font-size: var(--font-size-med);
   font-family: "typewriter", "Times New Roman", Times, serif;
+}
+
+.text-show {
+  opacity: 1;
+  transition: all 1s ease;
+}
+
+.text-fade {
+  opacity: 0;
+  transition: all 1s ease;
 }
 
 /* Form */
