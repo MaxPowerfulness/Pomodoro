@@ -1,11 +1,13 @@
 // Global
 let counter = 0;
-const form = document.getElementById("formPopUp");
+const formContainer = document.getElementById("formPopUp");
+const form = document.querySelector("form");
 const overlay = document.querySelector('#overlayDiv');
 const formBtn = document.querySelector(".formBtn");
-const textArea = document.querySelector('textarea');
+const textArea = document.querySelector("textarea");
 
 // Functions
+// Initializes the study session in local storage
 function saveSession() {
   let value = {
     start: new Date(),
@@ -15,23 +17,24 @@ function saveSession() {
   localStorage.setItem(`Session ${counter}`, JSON.stringify(value));
 }
 
+// Ends study sesssion, writes end time to object, bring down form to add session comments
 function endSession() {
-  // ends study sesssion, writes end time to object, bring down form to add session comments
   let session = JSON.parse(localStorage.getItem(`Session ${counter}`));
   session["end"] = new Date();
   localStorage.setItem(`Session ${counter}`, JSON.stringify(session));
-  form.style.display = "block";
+  formContainer.style.display = "block";
   overlay.classList.toggle('overlay');
 }
 
 // Form
-formBtn.addEventListener("click", () => {
-  form.display = "none";
-  overlay.classList.toggle('.overlay');
+const formBtnEvent = form.addEventListener("submit", (event) => {
+  event.preventDefault(); // Prevents page refresh on submit
+  formContainer.style.display = "none";
+  overlay.classList.toggle('overlay');
   let session = JSON.parse(localStorage.getItem(`Session ${counter}`));
   session["comment"] = textArea.value;
   localStorage.setItem(`Session ${counter}`, JSON.stringify(session));
   counter++;
 });
 
-export { saveSession, endSession };
+export { saveSession, endSession, formBtnEvent };

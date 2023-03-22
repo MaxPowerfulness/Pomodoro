@@ -5,7 +5,7 @@ import {
   setLongBreak,
   changeQuote,
 } from "./DOMchanges.js";
-import { saveSession, endSession } from "./sessionScript.js";
+import { saveSession, endSession, formBtnEvent } from "./sessionScript.js";
 
 //Global Variable
 const startBtn = document.getElementById("start");
@@ -85,4 +85,4 @@ function themeChanger(theme) {
   body.classList.add(theme);
 }
 
-changeQuote();
+changeQuote(); // Ran to generate quote on page open
