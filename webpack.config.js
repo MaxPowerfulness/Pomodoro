@@ -1,18 +1,20 @@
 const path = require("path");
 
 module.exports = {
-  mode: "development",
+  mode: "production",
   entry: {
     index: "./src/index.js",
-    timer: "./src/timer.js",
-    DOM: "./src/DOMchanges.js",
-    session: "./src/sessionScript.js",
+    activity: "./src/activityLogDisplay.js",
   },
   devtool: "inline-source-map",
   output: {
     filename: "[name].bundle.js",
     path: path.resolve(__dirname, "dist"),
     clean: true,
+  },
+  optimization: {
+    usedExports: true,
+    minimize: true,
   },
   module: {
     rules: [

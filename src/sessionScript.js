@@ -1,9 +1,9 @@
 // Global
-let counter = 0;
+let counter = 1;
+let sessionCount = [];
 const formContainer = document.getElementById("formPopUp");
 const form = document.querySelector("form");
 const overlay = document.querySelector('#overlayDiv');
-const formBtn = document.querySelector(".formBtn");
 const textArea = document.querySelector("textarea");
 
 // Functions
@@ -24,10 +24,18 @@ function endSession() {
   localStorage.setItem(`Session ${counter}`, JSON.stringify(session));
   formContainer.style.display = "block";
   overlay.classList.toggle('overlay');
+  sessionCount.push(counter);
 }
 
 // Form
-const formBtnEvent = form.addEventListener("submit", (event) => {
+function removeFormListener() {
+  const submitListeners = getEventListeners(form.submit);
+  if (submitListeners) {
+    submitListeners.forEach(listener => form.removeEventListener('submit', listener.listener));
+  }
+}
+
+function handleSubmit(event) {
   event.preventDefault(); // Prevents page refresh on submit
   formContainer.style.display = "none";
   overlay.classList.toggle('overlay');
@@ -35,6 +43,8 @@ const formBtnEvent = form.addEventListener("submit", (event) => {
   session["comment"] = textArea.value;
   localStorage.setItem(`Session ${counter}`, JSON.stringify(session));
   counter++;
-});
+}
 
-export { saveSession, endSession, formBtnEvent };
+form.addEventListener("submit", handleSubmit);
+
+export { saveSession, endSession, sessionCount, removeFormListener };

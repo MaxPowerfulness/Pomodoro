@@ -7,6 +7,7 @@
   --small-spacing: 20px;
   --large-spacing: 50px;
   --border-radius: 10px;
+  --xsmall-padding: 5px 15px;
   --small-padding: 10px 25px;
   --large-padding: 20px 35px;
   --red: rgb(240, 94, 94);
@@ -43,6 +44,11 @@ button {
   margin: var(--small-margin);
 }
 
+a {
+  color: blue;
+  text-decoration: none;
+}
+
 /* Themes */
 .studyTheme {
   background: var(--red);
@@ -74,7 +80,7 @@ ul {
 }
 
 /* Main */
-main {
+#indexMain {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -155,4 +161,22 @@ textarea {
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);   
+}
+
+/* Activity log */
+#activityLogHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#gridContainer {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border: 1px black solid;
+}
+
+.item {
+  border-bottom: 1px solid black;
+  padding: var(--xsmall-padding);
 }
